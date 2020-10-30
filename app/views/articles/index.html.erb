@@ -1,6 +1,16 @@
-<% @articles.each do |a| %>
-    <%= a.title  %>
-    <%= a.content %>
-    <%= a.image_url %>
-    <%= a.created_at %>
-<% end %>
+<ul>
+    <% @articles.each do |a| %>
+        <li>
+            <%= a.title  %>
+        </li>
+        <li>
+            <%= a.content %>
+        </li>
+        <li>
+            <%= a.image_url %>
+        </li>
+        <li>
+            <%= a.created_at.strftime("%F") %>
+        </li>
+    <% end %>
+</ul>
