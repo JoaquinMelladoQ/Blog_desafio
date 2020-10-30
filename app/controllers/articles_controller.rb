@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.all
+    @articles = Article.group_by
   end
 end
