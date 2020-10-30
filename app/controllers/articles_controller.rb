@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.group_by
+    @articles = Article.all
   end
 
   def dashbaord
@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.create(title: params[:title], image_url: params[:image_url], content: params[:content])
+    @article = Article.new(title: params[:title], image_url: params[:image_url], content: params[:content])
+    @article.save
   end
-
 end
