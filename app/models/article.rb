@@ -1,5 +1,7 @@
 class Article < ApplicationRecord
-    validates :title, :image_url, :content, presence: true
+    validates :title, presence: true
+    validates :image_url, presence: true
+    validates :content, presence: true
     before_save :censore
 
     def censore

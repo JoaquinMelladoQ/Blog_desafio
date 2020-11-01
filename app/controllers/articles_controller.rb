@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  http_basic_authenticate_with name: "algo", password: "123456", only: :dashboard
+  http_basic_authenticate_with name: "desafiovamoscontodo", password: "XAHTJEAS23123%23", only: :dashboard
 
 
   def index
@@ -11,7 +11,12 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(title: params[:title], image_url: params[:image_url], content: params[:content])
+    @article = Article.new(articles_params)
     @article.save
   end
+
+  private def articles_params
+    params.require(:article).permit(:title, :image_url, :content)
+  end
+  
 end
